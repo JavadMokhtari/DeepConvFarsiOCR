@@ -1,6 +1,5 @@
 # DeepConvFarsiOCR
-A Deep Convolutional Approach Toward Farsi Character Recognition. Used for both machine printed and handwritten datasets.
-This fork illustrates an implementation of following paper in Python.
+**Implementation of A Deep Convolutional Approach Toward Farsi Character Recognition in Python** <br />Used for both machine printed and handwritten datasets.
 
 # Papers
 
