@@ -1,5 +1,6 @@
 # DeepConvFarsiOCR
 A Deep Convolutional Approach Toward Farsi Character Recognition. Used for both machine printed and handwritten datasets.
+This fork illustrates an implementation of following paper in Python.
 
 # Papers
 
@@ -11,18 +12,21 @@ A Deep Convolutional Approach Toward Farsi Character Recognition. Used for both 
 #### Step1: Data
   - Download all images from [this link](https://www.mediafire.com/?jh9puuz96ihjuza).
   - Extract them to the home directory of this repository. After this, you should see  `PDB-Train` and `PDB-Test` folders in your home directory.
-  - ensure that `run()` function in `convert.images.lua` is not commented.
-  - execute `convert.images.lua` with the following parameters:
+  - Simply execute `Convert_to_PNG.py` to start converting images:
   ```
-  th convert.images.lua --src PDB-Test --dest PDB-Test --bin PDB_Test.bin
+  python3 Convert_to_PNG.py
+  ```
+  - Or execute `Convert_to_PNG.py` with the following parameters in another way:
+  ```
+  python3 Convert_to_PNG.py 'ConvertToPNG()' 'DOWNLOADED-PDB-Train-DIRECTORY' 'NEW-DIERCTORY-TO-STORAGE-TRAIN'
   ```
   and
   ```
-  th convert.images.lua --src PDB-Train --dest PDB-Train --bin PDB_Train.bin
+  python3 Convert_to_PNG.py 'ConvertToPNG()' 'DOWNLOADED-PDB-Test-DIRECTORY' 'NEW-DIERCTORY-TO-STORAGE-TEST'
   ```
   - These commands will
-    - Convert all bpm images in `--src` directory into PNG and store them in `--dest`
-    - extract labels from file names and store them with them images in `--bin` binary file.
+    - Convert all downloaded bpm images into PNG and store them in new directory.
+    - extract labels from file names and store images of each class in a separate directory.
 
 > Note that all files paths given to `--src` and `--dest` should be RELATIVE and should NOT include any `/` in them.
 
