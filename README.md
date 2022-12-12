@@ -15,7 +15,7 @@
   ```
   python Convert_to_PNG.py --images_dir 'PATH-TO-IMAGES-FOLDER' --dir_to_save 'PATH-TO-NEW-DIRECTORY'
   ```
-  * Like the following command:
+    * Like the following command:
   ```
   python Convert_to_PNG.py --images_dir 'PDB-Train/' --dir_to_save 'Train-Data/'
   ```
@@ -28,19 +28,22 @@
   ```
   python OCR-MODEL-FILE.py --train_data_dir 'PATH-TO-CLASSIFIED-TRAIN-DATA' --epochs NO-EPOCHS --model_storage_dir 'PATH-FOR-SAVE-MODEL'
   ```
-  * Example:
+    * Example:
   ```
   python PersianOCR.Plain.v1.py --train_data_dir 'Train-Data/' --epochs 10 --model_storage_dir 'models/'
   ```
   > The `--epochs` and `--model_storage_dir` arguments is **optional** but `--train_data_dir` is **required**
-  > The data directory should includes all classes in a distinct folders.
+  > The data directory should include all classes in a distinct folders.
   
 #### Step 3: Predict
-  -- Run `Predict.py` module like the below command:
+  - Run `Predict.py` module like the below command:
   ```
   python Predict.py --img_dir 'PATH-TO-AN-IMAGE' --saved_model_dir 'PATH-TO-A-SAVED-MODEL'
   ```
-  * Example:
+    * Example:
   ```
   python Predict.py --img_dir 'Test-Data/0/100_0.png' --saved_model_dir 'models/ocr_model_v1.h5'
   ```
+
+
+Thanks for reading ♥
