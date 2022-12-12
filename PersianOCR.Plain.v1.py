@@ -7,10 +7,11 @@ import os
 
 def Train(params):
     # Manage input arguments 
-    if '--train_directory' in params:
-        train_directory = params[params.index('--train_directory')+1]
+    if '--train_data_dir' in params:
+        train_data_dir = params[params.index('--train_data_dir')+1]
     else:
-        train_directory = 'Train-Data/'
+        print("Not found data directory to train!")
+        return
     if '--epochs' in params:
         epochs = int(params[params.index('--epochs')+1])
     else:
@@ -31,7 +32,7 @@ def Train(params):
     img_gen = keras.preprocessing.image.ImageDataGenerator(
         rescale=1./255,
         validation_split=0.2)
-    train_data_dir = os.path.dirname(train_directory)
+    train_data_dir = os.path.normpath(train_data_dir)
 
     # Create train dataset with ImageGenerator from local directory
     train_ds = img_gen.flow_from_directory(
@@ -43,7 +44,6 @@ def Train(params):
         interpolation='bilinear',
         batch_size=48)
 
-    print(train_ds.class_indices)
     # Create validation dataset with ImageGenerator from local directory
     val_ds = img_gen.flow_from_directory(
         directory=train_data_dir,
@@ -53,7 +53,6 @@ def Train(params):
         target_size=(IMG_WIDTH, IMG_HEIGHT),
         interpolation='bilinear',
         batch_size=16)
-    print(val_ds.class_indices)
 
     # Define CNN + FullyConnectedNetwork Model without BN and Dropout
     ocr_model_v1 = keras.models.Sequential([

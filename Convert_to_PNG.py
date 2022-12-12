@@ -1,4 +1,5 @@
 import os
+from os.path import normpath
 from random import randint
 from sys import argv
 from PIL import Image
@@ -7,12 +8,12 @@ from PIL import Image
 # Function for convert images format to PNG
 def ConvertToPNG(directories):
     if '--images_dir' in directories:
-        images_dir = directories[directories.index('--images_dir')+1]
+        images_dir = normpath(directories[directories.index('--images_dir')+1])
     else:
         print("Enter images data directory!")
         return
     if '--dir_to_save' in directories:
-        dir_to_save = directories[directories.index('--dir_to_save')+1]
+        dir_to_save = normpath(directories[directories.index('--dir_to_save')+1])
     else:
         dir_to_save = 'Converted-Images-' + str(randint(0, 100))
 
