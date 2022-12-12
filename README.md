@@ -19,7 +19,7 @@
   ```
   python Convert_to_PNG.py --images_dir 'PDB-Train/' --dir_to_save 'Train-Data/'
   ```
-  - Run this command for both `PDB-Train` and `PDB-Test` folders. These will:
+  - Run this command for both `PDB-Train` and `PDB-Test` folders. This will:
     - Convert all downloaded bpm images into png and store them in the new directory.
     - extract labels from file names and store images of each class in a separate directory.
 
@@ -32,10 +32,10 @@
   ```
   python PersianOCR.Plain.v1.py --train_data_dir 'Train-Data/' --epochs 10 --model_storage_dir 'models/'
   ```
-  > - The `--epochs` and `--model_storage_dir` arguments is **optional** but `--train_data_dir` is **required**.<br />
+  > - The `--epochs` and `--model_storage_dir` arguments are **optional** but `--train_data_dir` is **required**.<br />
   > - The data directory should include all classes in a distinct folders.
   
-#### Step 3: Predict
+### Step 3: Predict
   - Run `Predict.py` module like the below command:
   ```
   python Predict.py --img_dir 'PATH-TO-AN-IMAGE' --saved_model_dir 'PATH-TO-A-SAVED-MODEL'
@@ -46,4 +46,4 @@
   ```
 
 
-Thanks for reading ♥
+Thanks for your attention ♥
